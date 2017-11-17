@@ -83,11 +83,7 @@ type VideoData struct {
 }
 
 func (s *Server) check(w http.ResponseWriter, r *http.Request) {
-	var (
-		total     int
-		thumbnail *string
-	)
-
+	var thumbnail *string
 	// sent the headers for Server Side Events
 	w.Header().Set("Content-Type", "text/event-stream")
 	w.Header().Set("Cache-Control", "no-cache")
@@ -105,6 +101,7 @@ func (s *Server) check(w http.ResponseWriter, r *http.Request) {
 	}
 	cmd.Start()
 
+	total := 0
 	dec := json.NewDecoder(stdout)
 	for {
 		var f Frame
@@ -125,19 +122,14 @@ func (s *Server) check(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		faces, err := s.facebox.Check(bytes.NewReader(imgDec))
-		thumb := false
 		total = f.Total
+
+		thumbnail = nil
 		for _, face := range faces {
 			if face.Matched {
-				thumb = true
+				thumbnail = &f.Image
 			}
 		}
-		if thumb {
-			thumbnail = &f.Image
-		} else {
-			thumbnail = nil
-		}
-
 		SendEvent(w, enc, VideoData{
 			Frame:       f.Frame,
 			TotalFrames: f.Total,
