@@ -1,0 +1,32 @@
+body { 
+	background-color: #f9f9f9;
+	overflow-y: none;
+}
+.main.logo {
+	width: 250px;
+}
+.icon.image {
+	width: 15px;
+	height: 20px;
+}
+
+#frames img {
+	width: 150px;
+	cursor: hand;
+}
+
+#frames-container {
+	padding: 10px;
+	width: 100%;
+	overflow-x: scroll;
+	overflow-y: visible;
+}
+
+.ui.basic.dark.segment {
+	background-color: black;
+	color: white;
+}
+
+.frame-image {
+	width: 100%;
+}

@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Video Face Analysis by Machine Box</title>
+		<link rel='stylesheet' href='https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css'>
+		<link rel='stylesheet' href='/assets/app.css'>
+	</head>
+	<body>
+		<header>
+			<div class='ui container'>
+				<div class='ui header stackable grid'>
+					<div class='center aligned column'>
+						<div class='ui large secondary top menu'>
+							<a class='item' href='/'>
+								Video Face Analysis by&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img class='ui main logo' src='/assets/machineboxlogo.svg'>
+							</a>
+							<div class='right menu'>
+								<a class='item'>
+									<a class='item' target='_blank' href='https://machinebox.io/docs/facebox'>
+										<img class='icon image' src='/assets/machina.svg' />
+										Learn more about Facebox
+									</a>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class='splash image'>
+			<div class='ui container'>
+				<div class='ui error message' id='error' style='display:none;'></div>
+				<div class='ui basic segment'>
+					<h4>Select a video to process</h4>
+					<div id='results'></div>
+				</div>
+				<div class='ui purple progress' style='display:none'>
+					<div class='bar'></div>
+					<div class='label'>Processing video&hellip; <span class='time'></span></div>
+				</div>
+				<div class='ui basic dark segment' style='display:none'>
+					<div class='ui basic segment'>
+						<div class='ui grid' style='display:none'>
+							<div class='eleven wide column'>
+								<img class='frame-image'>
+							</div>
+							<div class='five wide column'>
+								<div class='details'></div>
+								<h5>People</h5>
+								<ul class='faces'></ul>
+							</div>		
+						</div>
+					</div>
+					<div id='frames-container'>
+						<div id='frames'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+		<script src='/assets/arg.js'></script>
+		<script src='/assets/app.js'></script>
+	</body>
+</html>
