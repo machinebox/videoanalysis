@@ -5,6 +5,9 @@ With this little app you can process video frames with Go, using a little Python
 
 Check out the blog post https://blog.machinebox.io/processing-video-to-do-face-recognition-with-go-and-python-298275a26095
 
+[![Video Analysis by Machinebox](video.png)](https://vimeo.com/243123250)
+
+
 ## Requirements
 
 * Go
